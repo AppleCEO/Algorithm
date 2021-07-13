@@ -1,13 +1,7 @@
-// https://learnjs.vlpt.us/basics/08-loop.html
-function biggerThanThree(numbers) {
-    let result = [];
-    for (let i = 0; i < numbers.length; i++) {
-        if(numbers[i] > 3) {
-            result.push(numbers[i]);
-        }
-    }
-    return result;
+// https://learnjs.vlpt.us/basics/09-array-functions.html
+function countBiggerThanTen(numbers) {
+    return numbers.filter(number => number > 10).length;
 }
-  
-const numbers = [1, 2, 3, 4, 5, 6, 7];
-console.log(biggerThanThree(numbers)); // [4, 5, 6, 7]
+
+const count = countBiggerThanTen([1, 2, 3, 5, 10, 20, 30, 40, 50, 60]);
+console.log(count); // 5
