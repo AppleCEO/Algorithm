@@ -1,7 +1,14 @@
-// https://learnjs.vlpt.us/basics/09-array-functions.html
-function countBiggerThanTen(numbers) {
-    return numbers.filter(number => number > 10).length;
+// https://learnjs.vlpt.us/useful/07-spread-and-rest.html
+function max(...numbers) {
+  let max = 0;
+  numbers.forEach(number => {
+    if (number > max) {
+      max = number;
+    }
+  })
+
+  return max;
 }
 
-const count = countBiggerThanTen([1, 2, 3, 5, 10, 20, 30, 40, 50, 60]);
-console.log(count); // 5
+const result = max(1, 2, 3, 4, 10, 5, 6, 7);
+console.log(result);
