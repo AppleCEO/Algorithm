@@ -1,14 +1,20 @@
-// https://learnjs.vlpt.us/useful/07-spread-and-rest.html
-function max(...numbers) {
-  let max = 0;
-  numbers.forEach(number => {
-    if (number > max) {
-      max = number;
-    }
-  })
+// https://app.codility.com/programmers/lessons/1-iterations/binary_gap/
+function solution(N) {
+    const binaryN = N.toString(2);
+    let maxBinaryGap = 0;
+    let currentBinaryGap = 0;
+    binaryN.split("").forEach(element => {
+        if (element === "0") {
+            currentBinaryGap++;
+        } else {
+            if (maxBinaryGap < currentBinaryGap) {
+                maxBinaryGap = currentBinaryGap;
+            }
+            currentBinaryGap = 0;
+        }
+    });
 
-  return max;
+    return maxBinaryGap;
 }
 
-const result = max(1, 2, 3, 4, 10, 5, 6, 7);
-console.log(result);
+console.log(solution(1041));
